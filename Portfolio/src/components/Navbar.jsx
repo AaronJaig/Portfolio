@@ -1,9 +1,13 @@
+import Portfolio from "../page/Portfolio";
+import { useState } from "react";
+
 function Navbar() {
+  const [active, setActive] = useState("active");
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#home">
-          Personal Website
+        <a class="logo navbar-brand" href="#home">
+          Portfolio
         </a>
         <button
           class="navbar-toggler"
@@ -19,12 +23,23 @@ function Navbar() {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">
+              <a
+                class={`homeBtn nav-link${
+                  window.location.pathname === "/" ? " active" : ""
+                }`}
+                aria-current="page"
+                href={"/"}
+              >
                 Home
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">
+              <a
+                class={`portfolioBtn nav-link${
+                  window.location.pathname === "/portfolio" ? " active" : ""
+                }`}
+                href={"/portfolio"}
+              >
                 Portfolio
               </a>
             </li>
