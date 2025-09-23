@@ -1,0 +1,121 @@
+/* Full screen container */
+.introscreen {
+  height: 100vh;
+  display: flex; /* horizontal alignment */
+  background-color: #2d3442; /* optional background */
+  color: #ccd6f6;
+}
+
+/* Left side: image */
+.left-pane {
+  flex: 1; /* take half width */
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.left-pane .image-box {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid #64ffda;
+  background: #000b02;
+  box-shadow: 0 8px 16px rgba(154, 255, 199, 0.3);
+  animation: pulseShadow 2s infinite ease-in-out;
+}
+@keyframes pulseShadow {
+  0% {
+    box-shadow: 0 8px 16px rgba(154, 255, 199, 0.3);
+  }
+  50% {
+    box-shadow: 0 12px 24px rgba(154, 255, 199, 0.6); /* bigger + brighter */
+  }
+  100% {
+    box-shadow: 0 8px 16px rgba(154, 255, 199, 0.3);
+  }
+}
+.left-pane .image-box img {
+  display: block;
+  width: 100%;
+  object-fit: cover; /* keeps aspect ratio, fills nicely */
+  animation: randomEnter 8s infinite ease-in-out;
+}
+.left-pane .image-box img {
+  display: block;
+  width: 100%;
+  object-fit: cover; /* keeps aspect ratio, fills nicely */
+  animation: randomEnter 8s infinite ease-in-out;
+}
+
+@keyframes randomEnter {
+  /* Start visible */
+  0%,
+  10% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  /* Move up */
+  20% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Move right */
+  40% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Move down */
+  60% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Move left */
+  80% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  90% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* End cycle */
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+/* Right side: text */
+.right-pane {
+  flex: 1; /* take other half */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center vertically */
+  padding: 2rem;
+}
+
+.right-pane h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.right-pane p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}

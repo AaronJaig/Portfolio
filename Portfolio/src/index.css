@@ -4,14 +4,36 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+html,
 body {
-  /* padding-top: 70px; */
+  height: 100%;
+}
+body {
   background-color: #2d3442;
   color: #ccd6f6;
+  display: flex;
+  flex-direction: column;
   scroll-behavior: smooth;
+
+  /* Animation setup */
+  animation: bgChange 10s forwards; /* total duration */
+}
+
+/* Keyframes */
+@keyframes bgChange {
+  0% {
+    background-color: #2d3442; /* initial */
+  }
+  80% {
+    background-color: #2d3442; /* stay the same for 8s */
+  }
+  100% {
+    background-color: #1e232d; /* new color after 8s */
+  }
 }
 .mainContent {
   padding-top: 70px;
+  flex: 1;
 }
 .navbar {
   position: fixed;
@@ -242,9 +264,24 @@ a {
   }
 }
 @media (max-width: 576px) {
+  .animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110vh; /* fills visible screen */
+    display: flex;
+    z-index: -1;
+  }
+  .footer {
+    font-size: 14px;
+    padding: 0.5rem;
+    margin-top: 0px;
+  }
   /* Navbar */
   .mainContent {
     height: 100vh;
+    flex: none;
   }
   .navbar {
     padding: 10px 5%; /* reduce padding on small screens */
@@ -327,4 +364,11 @@ a {
     min-width: 350px;
     min-height: 350px;
   }
+}
+
+.footer {
+  background: #1e232d;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 100px;
 }
