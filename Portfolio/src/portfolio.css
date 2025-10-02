@@ -2,7 +2,9 @@
 .introscreen {
   height: 100vh;
   display: flex; /* horizontal alignment */
-  background-color: #2d3442; /* optional background */
+  /* background-color: #2d3442; optional background */
+  background: #1f242d;
+
   color: #ccd6f6;
 }
 
@@ -140,4 +142,14 @@
   text-justify: inter-word;
   text-indent: 50px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.krabbibackground {
+  background-color: #000b02;
+  /* border: #64ffda solid 5px; */
+  border-radius: 5px;
+}
+.workoutimage img {
+  width: 400px;
+  height: 5 00px;
+  border-radius: 5%;
 }
