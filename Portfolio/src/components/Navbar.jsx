@@ -47,9 +47,9 @@ function Navbar() {
             <li class="nav-item">
               <a
                 class={`portfolioBtn nav-link${
-                  window.location.pathname === "/portfolio" ? " active" : ""
+                  window.location.pathname === "/contact" ? " active" : ""
                 }`}
-                href={"/portfolio"}
+                href={"/contact"}
               >
                 Contact
               </a>
