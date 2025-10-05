@@ -28,7 +28,7 @@ function Navbar() {
                   window.location.pathname === "/" ? " active" : ""
                 }`}
                 aria-current="page"
-                href={"/"}
+                href={"/Portfolio/"}
               >
                 Home
               </a>
