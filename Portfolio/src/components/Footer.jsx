@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-dark text-white text-center py-3">
+    <footer className=" footer">
       <div className="container">
         <p className="mb-0">&copy; 2025 Jai. All rights reserved.</p>
       </div>

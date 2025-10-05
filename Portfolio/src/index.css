@@ -4,11 +4,37 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-/* body {
-  background-color: #1f242d;
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #2d3442;
   color: #ccd6f6;
+  display: flex;
+  flex-direction: column;
   scroll-behavior: smooth;
-} */
+
+  /* Animation setup */
+  animation: bgChange 10s forwards; /* total duration */
+}
+
+/* Keyframes */
+@keyframes bgChange {
+  0% {
+    background-color: #2d3442; /* initial */
+  }
+  80% {
+    background-color: #2d3442; /* stay the same for 8s */
+  }
+  100% {
+    background-color: #1e232d; /* new color after 8s */
+  }
+}
+.mainContent {
+  padding-top: 70px;
+  flex: 1;
+}
 .navbar {
   position: fixed;
   top: 0;
@@ -31,7 +57,7 @@
   }
 }
 .logo {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
   color: #64ffda;
 }
@@ -40,7 +66,7 @@
   display: flex;
   align-items: center;
   background: none;
-  height: 100vh;
+  height: 100%;
   padding: 60px 9% 0;
   max-width: 1000px;
   visibility: hidden;
@@ -51,6 +77,7 @@
 .homeDetails h1 {
   font-size: 80px;
 }
+
 .homeDetails h2 {
   display: inline-block;
   font-size: 60px;
@@ -93,7 +120,6 @@
 .homeDetails .btn-sci {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
 }
 .btnTalk {
   display: inline-block;
@@ -143,16 +169,25 @@ a {
 .portfolioBtn:hover {
   color: #64ffda;
 }
+.homeImage {
+  display: flex; /* enable flexbox */
+  justify-content: flex-end; /* push content to the right (end) */
+  align-items: center; /* center vertically */
+}
 .homeImage .image-box {
   position: relative;
   display: flex;
   width: 32vw;
   height: 32vw;
-  /* background: red; */
+  min-width: 300px; /* ✅ prevent shrinking too much */
+  min-height: 300px; /* ✅ keep circular shape */
+  max-width: 500px; /* optional, keep it under control */
+  max-height: 500px;
   border-radius: 50%;
   padding: 5px;
   overflow: hidden;
 }
+
 .homeImage .image-box::before,
 .homeImage .image-box::after {
   content: "";
@@ -178,20 +213,27 @@ a {
   z-index: 1;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* ✅ push image to the end (right side) */
+  align-items: center; /* ✅ vertically center image */
 }
+
 .homeImage .image-box .image-item img {
-  position: absolute;
-  top: 50px;
   display: block;
+  max-width: 500px; /* keep responsive limits */
+  min-width: 250px;
   width: 100%;
+  height: auto;
   object-fit: cover;
   mix-blend-mode: lighten;
+  transform: scaleX(-1);
 }
+
 .animation {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* fills visible screen */
   display: flex;
   z-index: -1;
 }
@@ -208,4 +250,126 @@ a {
   100% {
     transform: translateY(0%);
   }
+}
+.nav-item a {
+  font-size: x-large;
+}
+
+@media (max-width: 768px) {
+  .homeImage {
+    justify-content: center; /* override: center horizontally */
+  }
+  .homeImage .image-box {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media (max-width: 576px) {
+  .animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110vh; /* fills visible screen */
+    display: flex;
+    z-index: -1;
+  }
+  .footer {
+    font-size: 14px;
+    padding: 0.5rem;
+    margin-top: 0px;
+  }
+  /* Navbar */
+  .mainContent {
+    height: 100vh;
+    flex: none;
+  }
+  .navbar {
+    padding: 10px 5%; /* reduce padding on small screens */
+  }
+
+  .logo {
+    font-size: 28px; /* smaller logo */
+  }
+
+  .nav-item a {
+    font-size: large; /* slightly smaller nav links */
+  }
+
+  /* Home Section */
+  .homeContent {
+    flex-direction: column; /* stack text + image vertically */
+    padding: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .homeContent > div {
+    margin: 0;
+  }
+  .homeDetails h1 {
+    font-size: 40px; /* shrink heading */
+  }
+
+  .homeDetails h2 {
+    font-size: 28px;
+  }
+  .homeDetails .btn-sci {
+    visibility: hidden;
+  }
+
+  .homeImage {
+    justify-content: center; /* center image on phones */
+    margin-top: 20px;
+  }
+
+  .homeImage .image-box {
+    width: 220px;
+    height: 220px;
+    min-width: 220px;
+    min-height: 220px;
+  }
+
+  .homeImage .image-box .image-item img {
+    min-width: 180px;
+    max-width: 250px;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 20px 12%;
+  }
+
+  .logo {
+    font-size: 48px;
+  }
+
+  .nav-item a {
+    font-size: xx-large;
+  }
+
+  .homeContent {
+    padding: 80px 12% 0;
+  }
+
+  .homeDetails h1 {
+    font-size: 100px;
+  }
+
+  .homeDetails h2 {
+    font-size: 72px;
+  }
+
+  .homeImage .image-box {
+    width: 400px;
+    height: 400px;
+    min-width: 350px;
+    min-height: 350px;
+  }
+}
+
+.footer {
+  background: #1e232d;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 100px;
 }

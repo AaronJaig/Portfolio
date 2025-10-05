@@ -1,0 +1,93 @@
+/* ==== General layout ==== */
+.contact-page {
+  background-color: #0e0e0e;
+  color: #f8f9fa;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  padding: 2rem 1rem;
+}
+
+.contact-container {
+  max-width: 1000px;
+  color: #f8f9fa;
+}
+
+/* ==== Left card (Contact Info) ==== */
+.contact-info-card {
+  background: linear-gradient(145deg, #2c2c2c, #242424);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #f8f9fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(13, 110, 253, 0.3);
+}
+
+.contact-info-card h4 {
+  color: #ffffff;
+  border-bottom: 2px solid #0d6efd;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ==== Right card (Form) ==== */
+.contact-form-card {
+  background: linear-gradient(145deg, #2c2c2c, #242424);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #f8f9fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(13, 110, 253, 0.3);
+}
+
+/* ==== Input fields ==== */
+.custom-input {
+  background-color: #1b1b1b;
+  color: #f8f9fa;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.custom-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0d6efd;
+}
+
+/* ==== Button ==== */
+.send-btn {
+  border: none;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.send-btn:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.03);
+}
+
+/* ==== Social Links ==== */
+.social-links a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0d6efd;
+  transform: scale(1.1);
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .contact-info-card,
+  .contact-form-card {
+    text-align: center;
+  }
+}
