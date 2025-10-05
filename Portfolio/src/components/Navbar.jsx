@@ -1,4 +1,4 @@
-import Portfolio from "../page/viewPortfolio";
+import Portfolio from "../page/Portfolio";
 import { useState } from "react";
 
 function Navbar() {
@@ -28,7 +28,7 @@ function Navbar() {
                   window.location.pathname === "/" ? " active" : ""
                 }`}
                 aria-current="page"
-                href={"/Portfolio/"}
+                href={"/"}
               >
                 Home
               </a>
@@ -38,7 +38,7 @@ function Navbar() {
                 class={`portfolioBtn nav-link${
                   window.location.pathname === "/portfolio" ? " active" : ""
                 }`}
-                href={"/Portfolio/viewportfolio"}
+                href={"/portfolio"}
               >
                 Portfolio
               </a>
@@ -49,7 +49,7 @@ function Navbar() {
                 class={`portfolioBtn nav-link${
                   window.location.pathname === "/contact" ? " active" : ""
                 }`}
-                href={"/Portfolio/contact"}
+                href={"/contact"}
               >
                 Contact
               </a>

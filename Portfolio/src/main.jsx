@@ -10,7 +10,7 @@ import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HashRouter>
+    <HashRouter basename="/Portfolio">
       <App />
     </HashRouter>
   </StrictMode>
