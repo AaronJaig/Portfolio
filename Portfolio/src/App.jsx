@@ -11,9 +11,9 @@ function App() {
     <main className="main-content">
       <Navbar />
       <Routes>
-        <Route path="/Portfolio" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Home />} />
+        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="contact" element={<Contact />} />
       </Routes>
       <Footer />
     </main>
