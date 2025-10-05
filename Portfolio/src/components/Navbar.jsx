@@ -38,7 +38,7 @@ function Navbar() {
                 class={`portfolioBtn nav-link${
                   window.location.pathname === "/portfolio" ? " active" : ""
                 }`}
-                href={"/portfolio"}
+                href={"/Portfolio/viewportfolio"}
               >
                 Portfolio
               </a>
@@ -49,7 +49,7 @@ function Navbar() {
                 class={`portfolioBtn nav-link${
                   window.location.pathname === "/contact" ? " active" : ""
                 }`}
-                href={"/contact"}
+                href={"/Portfolio/contact"}
               >
                 Contact
               </a>
