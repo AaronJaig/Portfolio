@@ -1,4 +1,4 @@
-import Portfolio from "../page/Portfolio";
+import Portfolio from "../page/viewPortfolio";
 import { useState } from "react";
 
 function Navbar() {
@@ -38,7 +38,7 @@ function Navbar() {
                 class={`portfolioBtn nav-link${
                   window.location.pathname === "/portfolio" ? " active" : ""
                 }`}
-                href={"/portfolio"}
+                href={"/viewportfolio"}
               >
                 Portfolio
               </a>
