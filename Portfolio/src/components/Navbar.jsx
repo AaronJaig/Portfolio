@@ -28,7 +28,7 @@ function Navbar() {
                   window.location.pathname === "/" ? " active" : ""
                 }`}
                 aria-current="page"
-                to={"#/"}
+                href={"/"}
               >
                 Home
               </a>
@@ -38,7 +38,7 @@ function Navbar() {
                 class={`portfolioBtn nav-link${
                   window.location.pathname === "/portfolio" ? " active" : ""
                 }`}
-                to={"#/portfolio"}
+                href={"/portfolio"}
               >
                 Portfolio
               </a>
@@ -49,7 +49,7 @@ function Navbar() {
                 class={`portfolioBtn nav-link${
                   window.location.pathname === "/contact" ? " active" : ""
                 }`}
-                to={"#/contact"}
+                href={"/contact"}
               >
                 Contact
               </a>

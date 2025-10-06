@@ -4,7 +4,7 @@ import krabbi from "../assets/krabbi.png";
 import workout from "../assets/workout.jpg";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
-function viewPortfolio() {
+function ViewPortfolio() {
   return (
     <div class="">
       <div className="introscreen">
@@ -51,4 +51,4 @@ function viewPortfolio() {
   );
 }
 
-export default viewPortfolio;
+export default ViewPortfolio;
