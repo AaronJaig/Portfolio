@@ -38,7 +38,7 @@ function Navbar() {
                 class={`portfolioBtn nav-link${
                   window.location.pathname === "/portfolio" ? " active" : ""
                 }`}
-                href={"/viewportfolio"}
+                href={"/portfolio"}
               >
                 Portfolio
               </a>
