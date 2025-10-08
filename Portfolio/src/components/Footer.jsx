@@ -18,6 +18,7 @@ function Footer() {
     </div>
   );
 }
+export default Footer;
 // function Footer() {
 //   return (
 //     <footer className=" footer">
