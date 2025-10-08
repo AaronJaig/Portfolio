@@ -12,7 +12,7 @@ function App() {
     <main className="main-content">
       <Navbar />
       <Routes>
-        <Route path="/Portfolio" element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
     </main>
@@ -20,7 +20,3 @@ function App() {
 }
 
 export default App;
-{
-  /* <Route path="/Portfolio/view" element={<ViewPortfolio />} />
-        <Route path="/Portfolio/contact" element={<Contact />} /> */
-}

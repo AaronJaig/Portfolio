@@ -1,21 +1,44 @@
-import Portfolio from "../page/viewPortfolio";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-scroll";
 
 function Navbar() {
-  const [active] = useState("active");
+  const [activeSection, setActiveSection] = useState("home");
 
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Trigger when 50% of section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.getAttribute("id"));
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => observer.observe(section));
+
+    // Cleanup observer on component unmount
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
   return (
     <div>
       <nav
-        class="navbar navbar-expand-lg fixed-top"
-        style="background-color: #1a1a1a"
+        className="navbar navbar-expand-lg fixed-top"
+        style={{ backgroundColor: "#1a1a1a" }}
       >
-        <div class="container">
-          <a class="navbar-brand text-orange fw-bold" href="#">
+        <div className="container">
+          <a className="navbar-brand text-orange fw-bold" href="#">
             MyPortfolio
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -23,33 +46,61 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a
-                  class="nav-link text-white active"
-                  aria-current="page"
-                  href="#home"
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link
+                  className={`nav-link text-white ${
+                    activeSection === "home" ? "active" : ""
+                  }`}
+                  to="home"
+                  smooth={true}
+                  duration={300}
+                  onClick={() => setActiveSection("home")}
                 >
                   Home
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#about">
+              <li className="nav-item">
+                <Link
+                  className={`nav-link text-white ${
+                    activeSection === "about" ? "active" : ""
+                  }`}
+                  to="about"
+                  smooth={true}
+                  duration={300}
+                  onClick={() => setActiveSection("about")}
+                >
                   About
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#myproject">
+              <li className="nav-item">
+                <Link
+                  className={`nav-link text-white ${
+                    activeSection === "myproject" ? "active" : ""
+                  }`}
+                  to="myproject"
+                  smooth={true}
+                  duration={300}
+                  onClick={() => setActiveSection("myproject")}
+                >
                   Projects
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#contact">
+              <li className="nav-item">
+                <Link
+                  className={`nav-link text-white ${
+                    activeSection === "contact" ? "active" : ""
+                  }`}
+                  to="contact"
+                  smooth={true}
+                  duration={300}
+                  onClick={() => setActiveSection("contact")}
+                >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
