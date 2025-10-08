@@ -4,8 +4,8 @@ import Navbar from "./components/Navbar";
 import Home from "./page/Home";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
-import ViewPortfolio from "./page/viewPortfolio"; // Capitalized component name
-import Contact from "./page/Contact";
+// import ViewPortfolio from "./page/viewPortfolio"; // Capitalized component name
+// import Contact from "./page/Contact";
 
 function App() {
   return (
